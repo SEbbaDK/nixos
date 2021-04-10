@@ -22,7 +22,7 @@ in
 
   services.roundcube = {
     enable = true;
-    hostName = secrets.roundcube;
+    hostName = secrets.mail.roundcube;
     extraConfig = ''
       $config['default_host'] = 'localhost';
       $config['smtp_port'] = 25;

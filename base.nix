@@ -1,5 +1,14 @@
-{ hostname, ui, deviceImports, version, swap ? 0 }:
-{ pkgs, ... }:
+{ hostname
+, ui
+, deviceImports
+, version
+, swap ? 0
+, system ? {
+    config = "x86_64-unknown-linux-gnu";
+    system = "x86_64-linux";
+  }
+}:
+{ pkgs, config, ... }:
 let
   user = import ./user.nix;
 in
@@ -42,6 +51,10 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
+  # nixpkgs.crossSystem = with config.nixpgs;
+  # if (localSystem.config != system.config || localSystem.system != system.system)
+  # then system
+  # else null;
 
   system.stateVersion = version;
 

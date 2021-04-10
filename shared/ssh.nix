@@ -11,6 +11,7 @@ in
     openFirewall = true;
   };
   users.users.${user}.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
+  users.users.root.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
 
   home-manager.users.${user}.programs.ssh = {
     enable = true;

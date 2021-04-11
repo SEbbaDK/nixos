@@ -83,7 +83,6 @@ in
         snores = "sudo nixos-rebuild switch";
       };
       initExtra = ''
-        [ -f ~/.cache/wal/colors-tty.sh ] && source ~/.cache/wal/colors-tty.sh
         bind '"\e   ": alias-expand-line'
       '';
     };

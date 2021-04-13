@@ -25,6 +25,7 @@ in
     ./shared/syncthing.nix
     ./shared/ssh.nix
     ./shared/vim.nix
+    ./shared/kakoune.nix
     # ./shared/ssh-keys.nix is imported via user keys
   ]
   ++ deviceImports

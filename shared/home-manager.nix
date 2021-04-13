@@ -47,7 +47,10 @@ in
         pull.ff = "only";
         merge.tool = "vimdiff";
       };
-      delta.enable = true;
+      delta = {
+        enable = true;
+        options.line-numbers = true;
+      };
     };
 
     services.sxhkd = {

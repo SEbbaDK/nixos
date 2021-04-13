@@ -7,5 +7,9 @@ in
     description = "sebbadk-net";
   };
 
-  "10.0.0.2" = ./pi.nix;
+  "10.0.0.2" = { ... }:
+  {
+    imports = [ ./pi.nix ];
+    deployment.targetEnv = 
+  };
 }

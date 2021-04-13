@@ -45,7 +45,9 @@ in
       userEmail = "sebbadk@gmail.com";
       extraConfig = {
         pull.ff = "only";
+        merge.tool = "vimdiff";
       };
+      delta.enable = true;
     };
 
     services.sxhkd = {

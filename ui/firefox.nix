@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
   user = import ../user.nix;
-  nur = import (fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
 in
 {
   home-manager.users.${user}.programs.firefox = {

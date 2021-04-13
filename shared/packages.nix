@@ -20,6 +20,7 @@
     usbutils
     miraclecast # Cast to TV
     ripgrep
+    (import (fetchTarball "https://github.com/Shopify/comma/archive/master.tar.gz") { inherit pkgs; })
   ];
   programs.vim.defaultEditor = true;
 }

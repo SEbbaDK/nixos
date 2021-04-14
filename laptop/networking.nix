@@ -1,26 +1,14 @@
 { pkgs, ... }:
+let
+  secrets = import ../secrets;
+in
 {
   networking.firewall.enable = false;
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.wireless.userControlled.enable = true;
 
   environment.systemPackages = [ pkgs.wpa_supplicant_gui ];
-  networking.wireless.networks = {
-    "Skyggelund Net" = {};
-    "ABK" = {
-      auth = ''
-        identity="lejl106"
-        password="maovuw75"
-        key_mgmt=WPA-EAP
-        eap=PEAP
-        phase1="peaplabel=0"
-        phase2="auth=MSCHAPV2"
-      '';
-    };
-    "UwU".psk = "1000nyaa";
-    "sebbadk-phone".psk = "whaniscute";
-    "WanStue_5G".psk = "thunderbean";
-  };
+  networking.wireless.networks = secrets.wifi;
 
   networking.useDHCP = false;
   networking.interfaces.enp0s25.useDHCP = true;

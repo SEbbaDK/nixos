@@ -1,10 +1,12 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    git gh
     bash
     wget
     vim_configurable nodejs # We want nodejs because of vim plugins
     git gnumake cmake gcc
+    pcregrep # Better grep (<3 -o1)
     ranger
     mediainfo
     ffmpeg-full

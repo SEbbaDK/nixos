@@ -20,27 +20,29 @@ in
 
     ./shared/bash.nix
     ./shared/danish.nix
+    ./shared/kakoune.nix
     ./shared/keyring.nix
     ./shared/packages.nix
-    ./shared/syncthing.nix
+    ./shared/shell.nix
     ./shared/ssh.nix
+    ./shared/syncthing.nix
     ./shared/vim.nix
-    ./shared/kakoune.nix
     # ./shared/ssh-keys.nix is imported via user keys
   ]
   ++ deviceImports
   ++ (if ui then [
       ./ui/common.nix
-      ./ui/gaming.nix
-      ./ui/i3.nix
-      #./ui/ibus.nix
-      ./ui/fcitx.nix
-      ./ui/pywal.nix
-      ./ui/packages.nix
-      ./ui/graphical-boot.nix
-      ./ui/nitrokey.nix
       ./ui/firefox.nix
       ./ui/fonts.nix
+      ./ui/gaming.nix
+      ./ui/graphical-boot.nix
+      ./ui/i3.nix
+      ./ui/nitrokey.nix
+      ./ui/packages.nix
+      ./ui/pywal.nix
+
+      ./ui/fcitx.nix
+      #./ui/ibus.nix
    ] else []);
 
   networking.hostName = hostname;

@@ -3,7 +3,9 @@ let
 in
 { pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.vim ];
+  environment.systemPackages = with pkgs; [
+    vim_configurable nodejs # We want nodejs because of vim plugins
+  ];
 
   home-manager.users.${user}.programs.vim = {
       enable = true;

@@ -6,18 +6,6 @@ in
   home-manager.users.${user} = {
     nixpkgs.config.allowUnfree = true;
     
-    programs.kitty = {
-      enable = true;
-      keybindings = {
-        "kitty_mod+plus" = "change_font_size all +2.0";
-      };
-      settings = {
-        font_size = 10;
-        background_opacity = "0.8";
-        enable_bell_sound = false;
-      };
-    };
-
     programs.rofi = {
       enable = true;
       terminal = "${pkgs.kitty}/bin/kitty";

@@ -30,20 +30,7 @@ in
     # ./shared/ssh-keys.nix is imported via user keys
   ]
   ++ deviceImports
-  ++ (if ui then [
-      ./ui/common.nix
-      ./ui/firefox.nix
-      ./ui/fonts.nix
-      ./ui/gaming.nix
-      ./ui/graphical-boot.nix
-      ./ui/i3.nix
-      ./ui/nitrokey.nix
-      ./ui/packages.nix
-      ./ui/pywal.nix
-
-      ./ui/fcitx.nix
-      #./ui/ibus.nix
-   ] else []);
+  ++ (if ui then [ ./ui ] else []);
 
   networking.hostName = hostname;
 

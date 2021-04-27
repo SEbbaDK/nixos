@@ -14,23 +14,23 @@ let
 in
 {
   imports =
-  [
-    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz"}/nixos")
-    ./shared/home-manager.nix
+    [
+      (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz"}/nixos")
+      ./shared/home-manager.nix
 
-    ./shared/bash.nix
-    ./shared/danish.nix
-    ./shared/kakoune.nix
-    ./shared/keyring.nix
-    ./shared/packages.nix
-    ./shared/shell.nix
-    ./shared/ssh.nix
-    ./shared/syncthing.nix
-    ./shared/vim.nix
-    # ./shared/ssh-keys.nix is imported via user keys
-  ]
-  ++ deviceImports
-  ++ (if ui then [ ./ui ] else []);
+      ./shared/bash.nix
+      ./shared/danish.nix
+      ./shared/kakoune.nix
+      ./shared/keyring.nix
+      ./shared/packages.nix
+      ./shared/shell.nix
+      ./shared/ssh.nix
+      ./shared/syncthing.nix
+      ./shared/vim.nix
+      # ./shared/ssh-keys.nix is imported via user keys
+    ]
+    ++ deviceImports
+    ++ (if ui then [ ./ui ] else [ ]);
 
   networking.hostName = hostname;
 

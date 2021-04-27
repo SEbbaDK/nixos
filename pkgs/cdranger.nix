@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, ...}:
+{ pkgs ? import <nixpkgs> { }, ... }:
 pkgs.writeShellScriptBin "cdranger" ''
   tmpfile="$(mktemp -t 'ranger.XXXX')"
   ${pkgs.ranger}/bin/ranger --choosedir="$tmpfile" "$@"

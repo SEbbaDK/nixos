@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  pkgs = import (fetchTarball "https://github.com/colemickens/nixpkgs/archive/rpi4-uboot.tar.gz") {};
+  pkgs = import (fetchTarball "https://github.com/colemickens/nixpkgs/archive/rpi4-uboot.tar.gz") { };
 in
 {
   boot = {
@@ -19,9 +19,18 @@ in
     };
     loader.grub.enable = false;
     initrd.availableKernelModules = [
-      "pcie_brcmstb" "bcm_phy_lib" "broadcom" "mdio_bcm_unimac" "genet"
-      "vc4" "bcm2835_dma" "i2c_bcm2835"
-      "xhci_pci" "nvme" "usb_storage" "sd_mod"
+      "pcie_brcmstb"
+      "bcm_phy_lib"
+      "broadcom"
+      "mdio_bcm_unimac"
+      "genet"
+      "vc4"
+      "bcm2835_dma"
+      "i2c_bcm2835"
+      "xhci_pci"
+      "nvme"
+      "usb_storage"
+      "sd_mod"
     ];
     kernelModules = config.boot.initrd.availableKernelModules;
   };

@@ -2,7 +2,8 @@
 let
   domain = "sebba.dk";
   fqdn = "matrix.${domain}";
-in {
+in
+{
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   services.postgresql = {
@@ -14,12 +15,12 @@ in {
         LC_COLLATE = "C"
         LC_CTYPE = "C";
     '';
-    ensureUsers = [ {
+    ensureUsers = [{
       name = "matrix-synapse";
       ensurePermissions = {
         "DATABASE \"matrix-synapse\"" = "ALL PRIVILEGES";
       };
-    } ];
+    }];
   };
 
   services.nginx = {
@@ -41,18 +42,20 @@ in {
             # use 443 instead of the default 8448 port to unite
             # the client-server and server-server port for simplicity
             server = { "m.server" = "${fqdn}:443"; };
-          in ''
+          in
+          ''
             add_header Content-Type application/json;
             return 200 '${builtins.toJSON server}';
           '';
         locations."= /.well-known/matrix/client".extraConfig =
           let
             client = {
-              "m.homeserver" =  { "base_url" = "https://${fqdn}"; };
-              "m.identity_server" =  { "base_url" = "https://vector.im"; };
+              "m.homeserver" = { "base_url" = "https://${fqdn}"; };
+              "m.identity_server" = { "base_url" = "https://vector.im"; };
             };
-          # ACAO required to allow element-web on any URL to request this json file
-          in ''
+            # ACAO required to allow element-web on any URL to request this json file
+          in
+          ''
             add_header Content-Type application/json;
             add_header Access-Control-Allow-Origin *;
             return 200 '${builtins.toJSON client}';

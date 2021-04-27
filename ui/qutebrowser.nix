@@ -1,11 +1,11 @@
 let
-	user = import ../user.nix;
+  user = import ../user.nix;
 in
 {
-	home-manager.users.${user}.programs.qutebrowser = {
-		enable = true;
-		settings = {
-			colors.webpage.darkmode.enabled = true;
-		};
-	};
+  home-manager.users.${user}.programs.qutebrowser = {
+    enable = true;
+    settings = {
+      colors.webpage.darkmode.enabled = true;
+    };
+  };
 }

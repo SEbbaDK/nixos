@@ -23,7 +23,7 @@ in
         then
           AHEAD_BEHIND=$(git rev-list --left-right --count "$BRANCH...$ORIGIN/$BRANCH")
           AHEAD=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+")
-          BEHIND=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+	\K[0-9]+")
+          BEHIND=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+  \K[0-9]+")
           GIT_PS1="$GIT_PS1$([ $AHEAD != 0 ] && echo "$AHEAD↑ ")"
           GIT_PS1="$GIT_PS1$([ $BEHIND != 0 ] && echo "$BEHIND↓ ")"
         else
@@ -40,13 +40,13 @@ in
   '';
 
   home-manager.users.${user}.programs.bash = {
-      enable = true;
-      historyControl = [ "ignoredups" "ignorespace" ];
-      historyIgnore = [ "ls" "cd" "r" "ranger" ];
-      shellOptions = [ "histappend" "checkwinsize" ];
+    enable = true;
+    historyControl = [ "ignoredups" "ignorespace" ];
+    historyIgnore = [ "ls" "cd" "r" "ranger" ];
+    shellOptions = [ "histappend" "checkwinsize" ];
 
-      initExtra = ''
-        bind '"\e   ": alias-expand-line'
-      '';
-    };
+    initExtra = ''
+      bind '"\e   ": alias-expand-line'
+    '';
+  };
 }

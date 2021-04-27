@@ -1,11 +1,11 @@
 let
   user = import ../user.nix;
 in
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> { }, ... }:
 {
   home-manager.users.${user} = {
     nixpkgs.config.allowUnfree = true;
-    
+
     programs.rofi = {
       enable = true;
       terminal = "${pkgs.kitty}/bin/kitty";

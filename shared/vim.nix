@@ -4,66 +4,67 @@ in
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    vim_configurable nodejs # We want nodejs because of vim plugins
+    vim_configurable
+    nodejs # We want nodejs because of vim plugins
   ];
 
   home-manager.users.${user}.programs.vim = {
-      enable = true;
-      plugins = with pkgs.vimPlugins; [
-        ale
-        airline
-        jedi-vim
-        vim-gitgutter
-        coc-nvim
-        
-        vim-elixir
-        vim-pandoc
-        vim-pandoc-syntax
-        #vim-racket
-        #vim-systemd-syntax
-        haskell-vim
-        #vim-crystal
-        #vim-cmake-syntax
-        elm-vim
-        kotlin-vim
+    enable = true;
+    plugins = with pkgs.vimPlugins; [
+      ale
+      airline
+      jedi-vim
+      vim-gitgutter
+      coc-nvim
 
-        wal-vim
-      ];
-      extraConfig = ''
-        filetype plugin indent on
-        syntax on
-        set autoindent
-        set smartindent
+      vim-elixir
+      vim-pandoc
+      vim-pandoc-syntax
+      #vim-racket
+      #vim-systemd-syntax
+      haskell-vim
+      #vim-crystal
+      #vim-cmake-syntax
+      elm-vim
+      kotlin-vim
 
-        set shiftwidth=0
-        set tabstop=4
-        set number
-        set nocompatible
-        syntax enable
-        set wildmenu
+      wal-vim
+    ];
+    extraConfig = ''
+      filetype plugin indent on
+      syntax on
+      set autoindent
+      set smartindent
 
-        command Head sp %:r.h | res 10
+      set shiftwidth=0
+      set tabstop=4
+      set number
+      set nocompatible
+      syntax enable
+      set wildmenu
 
-        set splitbelow
-        set splitright
+      command Head sp %:r.h | res 10
 
-        noremap <c-l> :tabnext<cr>
-        noremap <c-h> :tabprevious<cr>
+      set splitbelow
+      set splitright
 
-        set hidden
-        set confirm
+      noremap <c-l> :tabnext<cr>
+      noremap <c-h> :tabprevious<cr>
 
-        au InsertLeave * call gitgutter#process_buffer(bufnr('''), 0)
+      set hidden
+      set confirm
 
-        autocmd FileType haskell setlocal expandtab
+      au InsertLeave * call gitgutter#process_buffer(bufnr('''), 0)
 
-        colorscheme wal
+      autocmd FileType haskell setlocal expandtab
 
-        let g:airline#extensions#tabline#enabled = 1
+      colorscheme wal
 
-        " ignore case for insensitive search, and smartcase for sensitive when capitals are used
-        set ignorecase
-        set smartcase
-      '';
-    };
-  }
+      let g:airline#extensions#tabline#enabled = 1
+
+      " ignore case for insensitive search, and smartcase for sensitive when capitals are used
+      set ignorecase
+      set smartcase
+    '';
+  };
+}

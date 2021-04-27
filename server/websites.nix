@@ -12,11 +12,12 @@ let
     '';
   };
   vhostmap = f: sets: listToAttrs (map (name: { inherit name; value = f sets.${name}; }) (builtins.attrNames sets));
-  phpEnableRemover = vhostmap (vhost: builtins.removeAttrs vhost ["enablePHP"]);
-  phpEnabler = vhostmap (vhost: if (vhost.enablePHP or false)
-      then (vhost // { locations = vhost.locations // phpLoc; })
-      else vhost
-    );
+  phpEnableRemover = vhostmap (vhost: builtins.removeAttrs vhost [ "enablePHP" ]);
+  phpEnabler = vhostmap (vhost:
+    if (vhost.enablePHP or false)
+    then (vhost // { locations = vhost.locations // phpLoc; })
+    else vhost
+  );
   vhosts = phpEnableRemover (phpEnabler (import "${source}/vhosts.nix" { inherit pkgs; }));
   app = "webhosting";
 in
@@ -48,5 +49,5 @@ in
     home = "/home/${app}";
     group = app;
   };
-  users.groups.${app} = {};
+  users.groups.${app} = { };
 }

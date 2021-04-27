@@ -7,14 +7,17 @@ in
   users.users.${user}.packages = with pkgs; [
     kitty
     jetbrains.clion
-    discord teams weechat element-desktop
+    discord
+    teams
+    weechat
+    element-desktop
     zathura
     geogebra
     vlc
 
     gimp
     inkscape
-    
+
     peek
     shutter
     gnome3.gnome-screenshot

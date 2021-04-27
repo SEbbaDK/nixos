@@ -10,11 +10,12 @@ let
       url = "https://github.com/NixOS/nixpkgs/archive/2f47650c2f28d87f86ab807b8a339c684d91ec56.tar.gz";
       sha256 = "17akl75x28rzq97gaad32flswdsp150nfsg7h909kda721zql71a";
     })
-    { };  
+    { };
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -66,7 +67,7 @@ in
     displayManager.startx.enable = true;
     videoDrivers = [ "modesetting" ];
     # videoDrivers = [ "fbdev" ];
-    resolutions = [ { x = 1920; y = 1080; } ];
+    resolutions = [{ x = 1920; y = 1080; }];
   };
 
   system.stateVersion = "21.03"; # Did you read the comment?

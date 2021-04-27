@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
@@ -14,12 +15,13 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXOS_SD";
+    {
+      device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/swap"; size = 1024 * 2; } ];
+    [{ device = "/swap"; size = 1024 * 2; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
 }

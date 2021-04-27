@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> { }, ... }:
 let
   gnome-screenshot = "${pkgs.gnome3.gnome-screenshot}/bin/gnome-screenshot";
   pinta = "${pkgs.pinta}/bin/pinta";

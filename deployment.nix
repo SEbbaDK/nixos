@@ -1,5 +1,5 @@
 let
-  pkgs = import <nixpkgs> {};
+  pkgs = import <nixpkgs> { };
 in
 {
   network = {
@@ -8,8 +8,8 @@ in
   };
 
   "10.0.0.2" = { ... }:
-  {
-    imports = [ ./pi.nix ];
-    deployment.targetEnv = 
-  };
-}
+    {
+      imports = [ ./pi.nix ];
+      deployment.targetEnv =
+        };
+    }

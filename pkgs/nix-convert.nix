@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> { }, ... }:
 pkgs.writeShellScriptBin "nix-convert" ''
   usage() {
   cat << EOF

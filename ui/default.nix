@@ -1,6 +1,7 @@
 {
   imports = [
     ./common.nix
+    ./droidcam.nix
     ./firefox.nix
     ./fonts.nix
     ./gaming.nix

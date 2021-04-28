@@ -11,24 +11,33 @@ in
       PATH_PS1="\e[1;30;42m $(pwd | sed "s#$HOME#~#g") \e[m"
       if command -v git &> /dev/null && [ -n "$(git rev-parse --is-inside-work-tree 2> /dev/null)" ]
       then
-        CHANGES=$(git status -s | wc -l)
+        STATUS=$(git status --porcelain)
         ORIGIN=$(git remote | head -n 1)
         TAG=$(git describe --tag --exact-match 2>/dev/null)
         BRANCH=$(git branch --show-current)
         [ -z $BRANCH ] && BRANCH=$(git rev-parse HEAD | head -c 6)
         GIT_PS1="\e[1;30;44m $BRANCH "
-        [ -n $TAG ] && GIT_PS1="$GIT_PS1$TAG ";
-        GIT_PS1="$GIT_PS1$([ $CHANGES != 0 ] && echo "$CHANGES¤ ")"
+        [ -n $TAG ] && GIT_PS1="$GIT_PS1$TAG";
+
+        if [ "$STATUS" != "" ]
+        then
+            CHANGES="$(echo "$STATUS" | grep '^MM' | wc -l)"
+            [ "$CHANGES" != 0 ] && GIT_PS1="$GIT_PS1$CHANGES¤ "
+            UNTRACKED="$(echo "$STATUS" | grep '^??' | wc -l)"
+            [ "$UNTRACKED" != 0 ] && GIT_PS1="$GIT_PS1$UNTRACKED+ "
+        fi
+
         if git branch -r | grep -q "$ORIGIN/$BRANCH"
         then
           AHEAD_BEHIND=$(git rev-list --left-right --count "$BRANCH...$ORIGIN/$BRANCH")
           AHEAD=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+")
           BEHIND=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+  \K[0-9]+")
-          GIT_PS1="$GIT_PS1$([ $AHEAD != 0 ] && echo "$AHEAD↑ ")"
-          GIT_PS1="$GIT_PS1$([ $BEHIND != 0 ] && echo "$BEHIND↓ ")"
+          GIT_PS1="$GIT_PS1$([ "$AHEAD" != 0 ] && echo "$AHEAD↑ ")"
+          GIT_PS1="$GIT_PS1$([ "$BEHIND" != 0 ] && echo "$BEHIND↓ ")"
         else
           GIT_PS1="$GIT_PS1↟ "
         fi
+
         GIT_PS1="$GIT_PS1\e[m"
       else
         GIT_PS1=""

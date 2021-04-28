@@ -21,10 +21,12 @@ in
 
         if [ "$STATUS" != "" ]
         then
-            CHANGES="$(echo "$STATUS" | grep '^MM' | wc -l)"
+            CHANGES="$(echo "$STATUS" | grep '^.M' | wc -l)"
             [ "$CHANGES" != 0 ] && GIT_PS1="$GIT_PS1$CHANGES¤ "
-            UNTRACKED="$(echo "$STATUS" | grep '^??' | wc -l)"
+            UNTRACKED="$(echo "$STATUS" | grep '^.?' | wc -l)"
             [ "$UNTRACKED" != 0 ] && GIT_PS1="$GIT_PS1$UNTRACKED+ "
+            DELETED="$(echo "$STATUS" | grep '^.D' | wc -l)"
+            [ "$DELETED" != 0 ] && GIT_PS1="$GIT_PS1$DELETED- "
         fi
 
         if git branch -r | grep -q "$ORIGIN/$BRANCH"

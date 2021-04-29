@@ -21,7 +21,6 @@ in
     peek
     shutter
     gnome3.gnome-screenshot
-    libreoffice
     thunderbird
     pinta
     #rawtherapee

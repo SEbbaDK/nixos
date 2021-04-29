@@ -3,6 +3,10 @@ let
 in
 { pkgs ? import <nixpkgs> { }, ... }:
 {
+  imports = [
+    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz"}/nixos")
+  ];
+
   home-manager.users.${user} = {
     nixpkgs.config.allowUnfree = true;
 

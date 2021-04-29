@@ -14,8 +14,4 @@ import ./base.nix {
   swap = 16;
   version = "20.09";
 }
-# // { boot.extraModulePackages = [ pkgs.linuxPackages.v412loopback ];
-#      boot.kernelModules = [ "v412loopback" "snd-aloop" ]; }
-# // { containers.web = { autoStart = true; config = { services.nginx.enable = true; }; }; }
-# // { services.usbmuxd.enable = true; }
-# // { boot.binfmt.emulatedSystems = [ "aarch64-linux" ]; }
+

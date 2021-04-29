@@ -12,6 +12,7 @@
     ./packages.nix
     ./pywal.nix
     ./qutebrowser.nix
+    ./rofi.nix
 
     ./fcitx.nix
     #./ibus.nix

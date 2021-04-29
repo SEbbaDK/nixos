@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   user = import ../user.nix;
   mypkgs = import ../pkgs;
@@ -32,8 +33,8 @@ in
         if git branch -r | grep -q "$ORIGIN/$BRANCH"
         then
           AHEAD_BEHIND=$(git rev-list --left-right --count "$BRANCH...$ORIGIN/$BRANCH")
-          AHEAD=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+")
-          BEHIND=$(echo "$AHEAD_BEHIND" | grep -oP "^[0-9]+  \K[0-9]+")
+          AHEAD=$(echo "$AHEAD_BEHIND" | ${pcregrep} -o1 "^([0-9]+)\t([0-9]+)")
+          BEHIND=$(echo "$AHEAD_BEHIND" | ${pcregrep} -o2 "^([0-9]+)\t([0-9]+)")
           GIT_PS1="$GIT_PS1$([ "$AHEAD" != 0 ] && echo "$AHEAD↑ ")"
           GIT_PS1="$GIT_PS1$([ "$BEHIND" != 0 ] && echo "$BEHIND↓ ")"
         else

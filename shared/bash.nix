@@ -23,7 +23,7 @@ in
 
         if [ "$STATUS" != "" ]
         then
-            STAGED="$(echo "$STATUS" | grep '^[^ ]' | wc -l)"
+            STAGED="$(echo "$STATUS" | grep '^[^ ?]' | wc -l)"
             [ "$STAGED" != 0 ] && GIT_PS1="$GIT_PS1$STAGED× "
             CHANGES="$(echo "$STATUS" | grep '^.M' | wc -l)"
             [ "$CHANGES" != 0 ] && GIT_PS1="$GIT_PS1$CHANGES¤ "

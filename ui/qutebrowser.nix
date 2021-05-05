@@ -7,5 +7,9 @@ in
     settings = {
       colors.webpage.darkmode.enabled = true;
     };
+    searchEngines = {
+		np = "https://search.nixos.org/packages?query={}";
+		no = "https://search.nixos.org/options?query={}";
+    };
   };
 }

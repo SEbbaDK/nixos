@@ -18,12 +18,6 @@ in
     serverAliveInterval = 240;
     matchBlocks = mkMerge [
       {
-        "pi" = {
-          hostname = "10.0.0.2";
-          # port = 2201;
-          user = "sebbadk";
-          # proxyJump = "sebbadk";
-        };
         "mac" = {
           hostname = "localhost";
           port = 2222;

@@ -4,8 +4,11 @@ import ./base.nix {
   deviceImports =
     [
 		./nas/boot.nix
+		./nas/drives.nix
 		./nas/hardware-configuration.nix
 		./nas/networking.nix
+		./nas/nfs.nix
+		./nas/packages.nix
     ];
   swap = 8;
   version = "20.09";

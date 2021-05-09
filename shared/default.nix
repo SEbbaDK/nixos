@@ -25,4 +25,11 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "dialout" "cdrom" ];
   };
+  security.sudo.extraRules = [ {
+      users = [ "sebbadk" ];
+      commands = [ {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+      } ];
+  } ];
 }

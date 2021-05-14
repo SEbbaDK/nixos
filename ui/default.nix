@@ -2,6 +2,7 @@
   imports = [
     ./common.nix
     ./droidcam.nix
+    ./dunst.nix
     ./firefox.nix
     ./fonts.nix
     ./gaming.nix

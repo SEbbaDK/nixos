@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let
   user = import ../user.nix;
+  master-pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") { inherit pkgs; };
   kakoune-pkgs = import (fetchTarball "https://github.com/sebbadk/nixpkgs/archive/kakoune.tar.gz") { inherit pkgs; };
   config = pkgs.writeTextFile (rec {
     name = "kakrc.kak";
@@ -14,7 +15,7 @@ in
 {
   environment.systemPackages = [
     (kakoune-pkgs.kakoune.override {
-      plugins = with kakoune-pkgs.kakounePlugins; [
+      plugins = with master-pkgs.kakounePlugins; [
         config
         kakoune-buffers
         fzf-kak

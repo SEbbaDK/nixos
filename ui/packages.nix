@@ -2,12 +2,12 @@
 let
   user = import ../user.nix;
   mypkgs = import ../pkgs;
+  masterpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") { config = { nixpkgs.config.allowUnfree = true; allowUnfree = true; }; };
 in
 {
   users.users.${user}.packages = with pkgs; [
     kitty
-    jetbrains.clion
-    discord
+    masterpkgs.discord
     teams
     weechat
     element-desktop
@@ -29,6 +29,7 @@ in
     kdeconnect
     mypkgs.screenshot
     (writeScriptBin "clion-parseaal" "nix-shell /home/${user}/software/parseaal/ --run 'clion /home/${user}/software/parseaal/'")
+    (writeScriptBin "overleaf" "nix-shell -p chromium --run 'chromium --app=https://www.overleaf.com/project/602541e7e825872d90a4b3b8'")
     arandr
 
     # AAU VPN

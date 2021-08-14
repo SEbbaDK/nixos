@@ -13,6 +13,7 @@
       gl = "git log --oneline --graph --decorate --branches --remotes --tags --color=always | less -RS";
       gs = "git status";
       gc = "git commit -m";
+      gca = "git commit --amend";
       gps = "git push";
       gpl = "git pull";
       gd = "git diff";

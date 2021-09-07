@@ -4,12 +4,17 @@
         options = [ "bind" ];
     };
 
+    fileSystems."/nfs/music" = {
+        device = "/mnt/big/music";
+        options = [ "bind" ];
+    };
+
     networking.firewall.allowedTCPPorts = [ 2049 ];
 	services.nfs.server = {
     	enable = true;
     	exports = ''
-			/nfs		10.0.0.0/24(insecure,nohide,rw,sync,no_subtree_check)
 			/nfs/photos	10.0.0.0/24(insecure,nohide,rw,sync,no_subtree_check,no_root_squash)
+			/nfs/music	10.0.0.0/24(insecure,nohide,rw,sync,no_subtree_check,no_root_squash)
     	'';
 	};
 }

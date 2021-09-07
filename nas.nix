@@ -9,6 +9,8 @@ import ./base.nix {
 		./nas/networking.nix
 		./nas/nfs.nix
 		./nas/packages.nix
+		./nas/torrent.nix
+		./nas/dlna.nix
     ];
   swap = 8;
   version = "20.09";

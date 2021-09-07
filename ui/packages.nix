@@ -15,6 +15,8 @@ in
     geogebra
     vlc
 
+	nfs-utils # For mounting the NAS
+
     gimp
     inkscape
 
@@ -36,7 +38,7 @@ in
     openconnect
 
     # GAMING
-    # steam steam-run
+    steam steam-run
     minecraft
 
     wineWowPackages.full

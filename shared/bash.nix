@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   user = import ../user.nix;
-  mypkgs = import ../pkgs;
+  mypkgs = import ../pkgs { inherit pkgs; };
   pcregrep = "${pkgs.pcre}/bin/pcregrep";
 in
 {
@@ -9,7 +9,7 @@ in
     set_prompt() {
       SHELL_PS1="\e[1;30;43m$([ -n "$IN_NIX_SHELL" ] && if [ -n "$name" ]; then echo " $name "; else echo ' nix-shell '; fi)\e[m"
       USER_PS1="\e[1;30;41m $USER \e[m"
-      HOST_PS1="\e[1;30;45m $(cat /etc/hostname) \e[m"
+      HOST_PS1="\e[1;30;45m $HOSTNAME \e[m"
       PATH_PS1="\e[1;30;42m $(pwd | sed "s#$HOME#~#g") \e[m"
       if command -v git &> /dev/null && [ -n "$(git rev-parse --is-inside-work-tree 2> /dev/null)" ]
       then

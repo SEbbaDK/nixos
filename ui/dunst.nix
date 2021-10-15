@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   user = import ../user.nix;
 in

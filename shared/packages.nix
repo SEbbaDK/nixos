@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+	mypkgs = import ../pkgs { inherit pkgs; };
+in
 {
   environment.systemPackages = with pkgs; [
     git
@@ -8,8 +11,8 @@
     nodejs # We want nodejs because of vim plugins
     gnumake cmake gcc
     ripgrep pcre # Better grep (<3 -o1)
-    ranger sxiv feh
-    mediainfo ffmpeg-full
+    ranger
+    mediainfo
     htop
     xclip
     unzip unrar
@@ -21,6 +24,6 @@
     usbutils
     miraclecast # Cast to TV
     (import (fetchTarball "https://github.com/Shopify/comma/archive/master.tar.gz") { inherit pkgs; })
+    mypkgs.stregsystem
   ];
-  programs.vim.defaultEditor = true;
 }

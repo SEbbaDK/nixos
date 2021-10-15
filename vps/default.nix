@@ -4,7 +4,7 @@ import ../base.nix
   ui = false;
   deviceImports =
     [
-      ./bootloader.nix
+      ./boot.nix
       ./hardware-configuration.nix
 
       ./acme.nix
@@ -12,7 +12,8 @@ import ../base.nix
       ./networking.nix
       ./websites.nix
       ./matrix.nix
+      ./tunnel.nix
     ];
-  version = "20.09";
+  version = "21.05";
   swap = 4;
 }

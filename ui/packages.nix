@@ -1,49 +1,65 @@
 { pkgs, ... }:
 let
   user = import ../user.nix;
-  mypkgs = import ../pkgs;
+  mypkgs = import ../pkgs { inherit pkgs; };
   masterpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") { config = { nixpkgs.config.allowUnfree = true; allowUnfree = true; }; };
 in
 {
+  # These are the packages that aren't included via other mechanisms
+  # like nixos or homemanager options and should only be on UI systems
   users.users.${user}.packages = with pkgs; [
-    kitty
+	# image
+    sxiv
+    feh
+
+    # video
+    vlc
+    ffmpeg-full
+
+    # chatapps
     masterpkgs.discord
+    masterpkgs.signal-desktop
+    masterpkgs.element-desktop
+    masterpkgs.gomuks
     teams
     weechat
-    element-desktop
+
+    # document
     zathura
-    geogebra
-    vlc
+    pandoc
 
-	nfs-utils # For mounting the NAS
-
+	# editing
     gimp
     inkscape
-
-    peek
-    shutter
-    gnome3.gnome-screenshot
-    thunderbird
     pinta
+
+	# screenshot
+    peek
+    gnome3.gnome-screenshot
+    mypkgs.screenshot
+
+    # mail
+    thunderbird
+    aerc
+
     #rawtherapee
     #darktable
     transmission
     kdeconnect
-    mypkgs.screenshot
-    (writeScriptBin "clion-parseaal" "nix-shell /home/${user}/software/parseaal/ --run 'clion /home/${user}/software/parseaal/'")
-    (writeScriptBin "overleaf" "nix-shell -p chromium --run 'chromium --app=https://www.overleaf.com/project/602541e7e825872d90a4b3b8'")
-    arandr
 
-    # AAU VPN
+    # misc
+    mypkgs.stregsystem
+    arandr
+    zotero
+	nfs-utils # For mounting the NAS
+
+    # aau vpn
     openconnect
 
-    # GAMING
+    # gaming
     steam steam-run
     minecraft
 
     wineWowPackages.full
-
-    pandoc
-    #texlive.combined.scheme-full
   ];
 }

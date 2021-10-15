@@ -1,8 +1,6 @@
 { pkgs, ... }:
 let
   user = import ../user.nix;
-  master-pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") { inherit pkgs; };
-  kakoune-pkgs = import (fetchTarball "https://github.com/sebbadk/nixpkgs/archive/kakoune.tar.gz") { inherit pkgs; };
   config = pkgs.writeTextFile (rec {
     name = "kakrc.kak";
     destination = "/share/kak/autoload/${name}";
@@ -13,9 +11,10 @@ let
   });
 in
 {
+  environment.variables.EDITOR = "kak";
   environment.systemPackages = [
-    (kakoune-pkgs.kakoune.override {
-      plugins = with master-pkgs.kakounePlugins; [
+    (pkgs.kakoune.override {
+      plugins = with pkgs.kakounePlugins; [
         config
         kakoune-buffers
         fzf-kak

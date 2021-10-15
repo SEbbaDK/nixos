@@ -1,5 +1,6 @@
 { pkgs, ... }:
 let
+  secrets = import ../secrets;
   domain = "sebba.dk";
   fqdn = "matrix.${domain}";
 in
@@ -83,6 +84,7 @@ in
   services.matrix-synapse = {
     enable = true;
     server_name = domain;
+    registration_shared_secret = secrets.matrix.registration_secret;
     listeners = [
       {
         port = 8008;

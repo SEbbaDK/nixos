@@ -4,7 +4,7 @@ import ../base.nix {
   deviceImports =
     [
       ./hardware-configuration.nix
-      ./bootloader.nix
+      ./boot.nix
       ./bluetooth.nix
       ./gpu.nix
       ./networking.nix

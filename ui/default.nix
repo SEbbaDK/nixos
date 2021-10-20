@@ -7,6 +7,7 @@
     ./fonts.nix
     ./gaming.nix
     ./graphical-boot.nix
+    ./hotkeys.nix
     ./i3.nix
     ./kitty.nix
     ./nitrokey.nix

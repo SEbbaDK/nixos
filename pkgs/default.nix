@@ -6,7 +6,9 @@
   nix-convert = callPackage ./nix-convert.nix { };
   uppaal = callPackage ./nix-convert.nix { };
   cdranger = callPackage ./cdranger.nix { };
+  stregsystem-old = callPackage (fetchTarball "https://github.com/f-klubben/stregsystemet-cli/archive/master.tar.gz") { };
   stregsystem = callPackage (fetchTarball "https://github.com/f-klubben/stregsystemet-cli/archive/master.tar.gz") { };
+  comma = callPackage (fetchTarball "https://github.com/Shopify/comma/archive/master.tar.gz") { };
 
   droidcam-obs-plugin = callPackage ./droidcam-obs-plugin.nix { };
   droidcam-obs-plugin-blobby = callPackage ./droidcam-obs-plugin-blobby.nix { };

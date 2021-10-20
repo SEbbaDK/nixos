@@ -23,7 +23,6 @@ in
     wget whois dig djbdns # WEB and DNS utilities
     usbutils
     miraclecast # Cast to TV
-    (import (fetchTarball "https://github.com/Shopify/comma/archive/master.tar.gz") { inherit pkgs; })
-    mypkgs.stregsystem
+    mypkgs.comma
   ];
 }

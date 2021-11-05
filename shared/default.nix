@@ -6,7 +6,10 @@ in
     [
       ./home-manager.nix
 
-      ./bash.nix
+      # Note that shell.nix should also be changed
+      # if the switch back to bash is made
+      # ./bash.nix
+      ./fish.nix
       ./danish.nix
       ./kakoune.nix
       ./keyring.nix

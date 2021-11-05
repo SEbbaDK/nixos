@@ -5,6 +5,7 @@ let
   pcregrep = "${pkgs.pcre}/bin/pcregrep";
 in
 {
+  users.defaultUserShell = pkgs.bash;
   programs.bash.promptInit = ''
     set_prompt() {
       SHELL_PS1="\e[1;30;43m$([ -n "$IN_NIX_SHELL" ] && if [ -n "$name" ]; then echo " $name "; else echo ' nix-shell '; fi)\e[m"

@@ -1,45 +1,40 @@
 {
-  environment = {
-    shellAliases = {
-      ls = "ls --color=auto";
-      ll = "ls -l";
-      la = "ls -a";
-      grep = "grep --color=auto";
-      egrep = "egrep --color=auto";
-      grin = "grep -rin";
+    environment.shellAliases = {
+        ls = "ls --color=auto";
+        ll = "ls --color=auto -lh";
+        grep = "grep --color=auto";
+        egrep = "egrep --color=auto";
+    };
+    # In other shells these should just be in aliases
+    programs.fish.shellAbbrs = {
+        gl = "git log --oneline --graph --decorate --branches --remotes --tags --color=always | less -RS";
+        gs = "git status";
+        gc = "git commit -m";
+        gca = "git commit --amend";
+        gps = "git push";
+        gpl = "git pull";
+        gd = "git diff";
+        gb = "git checkout -b";
+        gsw = "git switch";
+        ga = "git add";
+        gf = "git fetch";
 
-      # r = "source ranger";
+        yt-mp3 = "youtube-dl --extract-audio --audio-format mp3 --embed-thumbnail --add-metadata -o \"%(title)s.%(ext)s\"";
 
-      gl = "git log --oneline --graph --decorate --branches --remotes --tags --color=always | less -RS";
-      gs = "git status";
-      gc = "git commit -m";
-      gca = "git commit --amend";
-      gps = "git push";
-      gpl = "git pull";
-      gd = "git diff";
-      gb = "git checkout -b";
-      gsw = "git switch";
-      ga = "git add";
-      gf = "git fetch";
-      ghub = "git clone git@github.com:";
+        "clip" = "xclip";
+        "clipo" = "xclipo -o";
+        "+clip" = "xclip -sel clip";
+        "+clipo" = "xclip -sel clip -o";
 
-      yt-mp3 = "youtube-dl --extract-audio --audio-format mp3 --embed-thumbnail --add-metadata -o \"%(title)s.%(ext)s\"";
+        nsrch = "nix search";
+        nsh = "nix-shell";
 
-      "*clip" = "xclip";
-      "*clipo" = "*clipo -o";
-      "+clip" = "xclip -sel clip";
-      "+clipo" = "+clip -o";
+        t = "todo.sh";
 
-      nsh = "nix-shell";
-      nsrch = "nix search";
-
-      t = "todo.sh";
-
-      snores = "sudo nixos-rebuild switch";
+        snores = "sudo nixos-rebuild switch";
     };
 
-    variables = {
-      GCC_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01";
+    environment.variables = {
+        GCC_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01";
     };
-  };
 }

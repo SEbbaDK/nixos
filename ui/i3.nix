@@ -15,7 +15,7 @@ in
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
-      configFile = "/home/${user}/dotfiles/configs/.config/i3/config";
+      configFile = ./i3.conf;
       #workspaceNaming = true;
       extraPackages = with pkgs; [
         dmenu

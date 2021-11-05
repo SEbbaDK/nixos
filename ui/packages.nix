@@ -25,8 +25,9 @@ in
     weechat
 
     # document
-    zathura
     pandoc
+    #zathura
+    mypkgs.zathura-pywall
 
 	# editing
     gimp

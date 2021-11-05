@@ -15,8 +15,9 @@
     ./pywal.nix
     ./qutebrowser.nix
     ./rofi.nix
+    ./theming.nix
 
-    ./fcitx.nix
+    #./fcitx.nix
     #./ibus.nix
   ];
 }

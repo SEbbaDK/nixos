@@ -12,6 +12,7 @@ import ../base.nix
       ./networking.nix
       ./websites.nix
       ./matrix.nix
+      ./sonica.nix
       ./tunnel.nix
     ];
   version = "21.05";

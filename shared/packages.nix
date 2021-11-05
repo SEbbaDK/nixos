@@ -6,7 +6,6 @@ in
   environment.systemPackages = with pkgs; [
     git
     gh
-    bash
     vim_configurable
     nodejs # We want nodejs because of vim plugins
     gnumake cmake gcc
@@ -24,5 +23,7 @@ in
     usbutils
     miraclecast # Cast to TV
     mypkgs.comma
+    mypkgs.barion
+    gdu # Disk Usage
   ];
 }

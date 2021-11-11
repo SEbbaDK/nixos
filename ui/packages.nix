@@ -26,8 +26,10 @@ in
 
     # document
     pandoc
+    masterpkgs.tectonic # LaTeX compiler
     #zathura
     mypkgs.zathura-pywall
+    beamerpresenter
 
 	# editing
     gimp

@@ -10,15 +10,6 @@ in
   home-manager.users.${user} = {
     nixpkgs.config.allowUnfree = true;
 
-    services.dunst = {
-      enable = true;
-      settings = {
-        global = {
-          transparency = 20;
-        };
-      };
-    };
-
     programs.git = {
       enable = true;
       userName = "SEbbaDK";

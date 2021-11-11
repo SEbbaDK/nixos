@@ -34,5 +34,18 @@ in
   services.picom = {
     enable = true;
     vSync = true;
+
+	activeOpacity = 1.0;
+	inactiveOpacity = 0.85;
+	menuOpacity = 1.0;
+    opacityRules = [
+		"100:class_g = 'Rofi'"
+    ];
+
+    shadow = true;
+    shadowExclude = [
+        # Don't stack shadows when tabbing windows
+        "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+    ];
   };
 }

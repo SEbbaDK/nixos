@@ -18,5 +18,9 @@ in
 		pub = "https://pub.dev/packages/{}";
 		sch = "https://scholar.google.com/scholar?q={}";
     };
+    keyBindings.normal = {
+		"gj" = "scroll-to-perc";
+		"gk" = "scroll-to-perc 0";
+    };
   };
 }

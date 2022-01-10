@@ -7,6 +7,7 @@
     ./fonts.nix
     ./gaming.nix
     ./graphical-boot.nix
+    #./hotkeys.nix
     ./i3.nix
     ./kitty.nix
     ./nitrokey.nix
@@ -15,6 +16,7 @@
     ./pywal.nix
     ./qutebrowser.nix
     ./rofi.nix
+    ./tablet.nix
     ./theming.nix
 
     #./fcitx.nix

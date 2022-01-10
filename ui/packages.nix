@@ -15,6 +15,7 @@ in
     # video
     vlc
     ffmpeg-full
+    mpv
 
     # chatapps
     masterpkgs.discord
@@ -61,7 +62,8 @@ in
 
     # gaming
     steam steam-run
-    minecraft
+    # minecraft
+    multimc
 
     wineWowPackages.full
   ];

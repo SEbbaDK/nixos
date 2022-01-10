@@ -8,10 +8,11 @@ in
       enable = true;
       settings = {
         global = {
-          transparency = 50;
+          transparency = 30;
 
-          geometry = "300x0-10+10";
+          geometry = "400x0-10+10";
           format = "<b>%s</b>\\n%b";
+          markup = "full";
           separator_height = 10;
           padding = 10;
           horizontal_padding = 10;

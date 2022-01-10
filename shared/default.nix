@@ -14,6 +14,7 @@ in
       ./kakoune.nix
       ./keyring.nix
       ./packages.nix
+      ./ranger.nix
       ./shell.nix
       ./ssh.nix
       ./syncthing.nix

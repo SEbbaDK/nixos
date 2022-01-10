@@ -6,6 +6,7 @@ import ../base.nix {
 		./boot.nix
 		./drives.nix
 		./hardware-configuration.nix
+		./home-assistant.nix
 		./networking.nix
 		./nfs.nix
 		./packages.nix

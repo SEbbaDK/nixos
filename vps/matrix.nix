@@ -101,18 +101,4 @@ in
       }
     ];
   };
-
-  services.nginx.virtualHosts."element.${domain}" = {
-    enableACME = true;
-    forceSSL = true;
-
-    root = pkgs.element-web.override {
-      conf = {
-        default_server_config."m.homeserver" = {
-          "base_url" = "https://${fqdn}";
-          "server_name" = "https://${fqdn}";
-        };
-      };
-    };
-  };
 }

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 	environment.systemPackages = [ pkgs.ranger ];
-	environment.etc."ranger/rc.conf" = ''
+	environment.etc."ranger/rc.conf".text = ''
 		set vcs_aware true
 		set vcs_backend_git enabled
 

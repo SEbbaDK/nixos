@@ -17,6 +17,7 @@ in
 		dw = "https://da.wikipedia.org/wiki/{}";
 		pub = "https://pub.dev/packages/{}";
 		sch = "https://scholar.google.com/scholar?q={}";
+		dblp = "https://dblp.uni-trier.de/search?q={}";
     };
     keyBindings.normal = {
 		"gj" = "scroll-to-perc";

@@ -6,9 +6,9 @@ in
   fonts.fonts = with pkgs; [
     fira-code
     noto-fonts-emoji-blob-bin
-	mypkgs.fira-code-victor
+	#mypkgs.fira-code-victor
   ];
   fonts.fontconfig.defaultFonts = {
-    monospace = [ "Fira Code Victor" ];
+    monospace = [ "Fira Code" ];
   };
 }

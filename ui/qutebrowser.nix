@@ -2,6 +2,7 @@ let
   user = import ../user.nix;
 in
 {
+  environment.variables.BROWSER = "qutebrowser";
   home-manager.users.${user}.programs.qutebrowser = {
     enable = true;
     settings = {
@@ -18,6 +19,7 @@ in
 		pub = "https://pub.dev/packages/{}";
 		sch = "https://scholar.google.com/scholar?q={}";
 		dblp = "https://dblp.uni-trier.de/search?q={}";
+		hoog = "https://hoogle.haskell.org/?hoogle={}";
     };
     keyBindings.normal = {
 		"gj" = "scroll-to-perc";

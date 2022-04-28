@@ -5,7 +5,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     git
-    gh
+    gh glab
     vim_configurable
     nodejs # We want nodejs because of vim plugins
     gnumake cmake gcc
@@ -22,7 +22,7 @@ in
     wget whois dig djbdns # WEB and DNS utilities
     usbutils
     miraclecast # Cast to TV
-    mypkgs.comma
+    #mypkgs.comma # Disabled because it was broken
     mypkgs.barion
     gdu # Disk Usage
   ];

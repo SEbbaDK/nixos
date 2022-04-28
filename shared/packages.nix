@@ -3,6 +3,7 @@ let
 	mypkgs = import ../pkgs { inherit pkgs; };
 in
 {
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
   environment.systemPackages = with pkgs; [
     git
     gh

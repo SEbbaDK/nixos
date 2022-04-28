@@ -6,6 +6,7 @@ import ../base.nix {
       ./hardware-configuration.nix
       ./boot.nix
       ./networking.nix
+      ./gpu.nix
     ];
   swap = 16;
   version = "21.11";

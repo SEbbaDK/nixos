@@ -11,6 +11,7 @@ let
       terminal_change_colors=false
       eval %sh{kak-lsp --kakoune -s $kak_session}
       lsp-enable-window
+      kakboard-disable
     '';
   });
   plugins = with pkgs.kakounePlugins; [
@@ -45,7 +46,8 @@ in
         word = true;
       };
       hooks = [
-        { name = "WinCreate"; option = ".*"; commands = "kakboard-enable"; }
+        # This hook is removed because kakboard breaks multicursor copying
+        #{ name = "WinCreate"; option = ".*"; commands = "kakboard-enable"; }
       ];
     };
     extraConfig = ''

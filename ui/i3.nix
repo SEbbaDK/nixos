@@ -47,5 +47,16 @@ in
         # Don't stack shadows when tabbing windows
         "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
     ];
+
+	# https://github.com/yshui/picom/issues/620
+	#backend = "glx";
+	settings = {
+    	blur-background = true;
+    	blur-background-fixed = true;
+        blur = {
+    		method = "kernel";
+    		kernel = "7x7box";
+        };
+	};
   };
 }

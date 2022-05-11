@@ -32,6 +32,10 @@
         t = "todo.sh";
 
         snores = "sudo nixos-rebuild switch";
+
+        json-query = "jq";
+        json-print = "jq";
+        json-view = "fx";
     };
 
     environment.variables = {

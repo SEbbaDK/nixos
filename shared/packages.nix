@@ -11,6 +11,7 @@ in
     nodejs # We want nodejs because of vim plugins
     gnumake cmake gcc
     ripgrep pcre # Better grep (<3 -o1)
+    jq fx # Work with json on commandline
     ranger
     mediainfo
     htop

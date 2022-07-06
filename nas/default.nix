@@ -10,6 +10,7 @@ import ../base.nix {
 		./networking.nix
 		./nfs.nix
 		./packages.nix
+		./syncthing.nix
 		./torrent.nix
 		./dlna.nix
     ];

@@ -17,7 +17,7 @@ in
       ./ranger.nix
       ./shell.nix
       ./ssh.nix
-      ./syncthing.nix
+      #./syncthing.nix
       ./vim.nix
       # ./ssh-keys.nix is imported via user keys
     ];

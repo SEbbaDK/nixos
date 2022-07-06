@@ -14,6 +14,7 @@
     ./obs.nix
     ./packages.nix
     ./pywal.nix
+    ./syncthing.nix
     ./qutebrowser.nix
     ./rofi.nix
     ./tablet.nix

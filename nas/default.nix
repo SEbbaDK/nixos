@@ -3,6 +3,7 @@ import ../base.nix {
   ui = false;
   deviceImports =
     [
+        ./adguard.nix
 		./boot.nix
 		./drives.nix
 		./hardware-configuration.nix

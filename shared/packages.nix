@@ -18,6 +18,7 @@ in
     xclip
     unzip unrar
     ntfs3g # NTFS support (mkfs.ntfs)
+    tabview # CSV viewer
     youtube-dl
     todo-txt-cli
     gdb

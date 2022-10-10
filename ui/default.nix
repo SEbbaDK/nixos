@@ -9,6 +9,7 @@
     ./graphical-boot.nix
     #./hotkeys.nix
     ./i3.nix
+    ./kde-connect.nix
     ./kitty.nix
     ./nitrokey.nix
     ./obs.nix

@@ -49,7 +49,6 @@ in
     #rawtherapee
     #darktable
     transmission
-    kdeconnect
 
     # misc
     mypkgs.stregsystem

@@ -8,4 +8,9 @@ in
     enable = true;
   };
   users.users.${user}.extraGroups = [ "syncthing" ];
+
+  fileSystems."/sync" = {
+      device = "/mnt/big/syncthing";
+      options = [ "bind" ];
+  };
 }

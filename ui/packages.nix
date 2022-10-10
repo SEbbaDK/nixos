@@ -62,8 +62,10 @@ in
     # gaming
     steam steam-run
     # minecraft
-    multimc
+    polymc
 
     wineWowPackages.full
+
+    scribusUnstable
   ];
 }

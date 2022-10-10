@@ -3,7 +3,7 @@ with builtins;
 let
   source = fetchGit {
     url = "git@github.com:sebbadk/websites.git";
-    rev = "be405735ccf27197a107e1dcaa61c58a0af7292e";
+    rev = "4b8d1c19203f0565579d652224b33d9a0c035ded";
   };
   phpLoc = {
     "~ \\.php$".extraConfig = ''

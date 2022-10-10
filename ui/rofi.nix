@@ -6,7 +6,7 @@ in
   home-manager.users.${user}.programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = "~/.cache/wal/colors-rofi-dark";
+    theme = "~/.cache/wal/colors-rofi-dark.rasi";
     # extraConfig = ''
     #   modi: "combi";
     #   combi-modi: "run,ssh,drun";

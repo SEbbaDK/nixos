@@ -14,6 +14,9 @@ import ../base.nix {
 		./syncthing.nix
 		./torrent.nix
 		./dlna.nix
+
+		./docker.nix
+		./photoprism.nix
     ];
   swap = 8;
   version = "20.09";

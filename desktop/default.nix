@@ -8,7 +8,7 @@ import ../base.nix {
       ./networking.nix
       ./gpu.nix
     ];
-  swap = 16;
+  swap = 2;
   version = "21.11";
 }
 

@@ -4,10 +4,11 @@ in
 { pkgs ? import <nixpkgs> { }, ... }:
 {
   imports = [
-    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz"}/nixos")
+    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz"}/nixos")
   ];
 
   home-manager.users.${user} = {
+    home.stateVersion = "22.05";
     nixpkgs.config.allowUnfree = true;
 
     programs.git = {

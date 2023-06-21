@@ -6,6 +6,7 @@ import ../base.nix {
         ./adguard.nix
 		./boot.nix
 		./drives.nix
+		./duplicacy.nix
 		./hardware-configuration.nix
 		./home-assistant.nix
 		./networking.nix

@@ -4,6 +4,7 @@
     services.minidlna = {
         enable = true;
         friendlyName = "NAS";
+        settings.inotify = "yes";
         mediaDirs = [
             "A,/mnt/big/music"
             "/mnt/big/media"

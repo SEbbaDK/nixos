@@ -27,7 +27,7 @@ in
 
     # document
     pandoc
-    masterpkgs.tectonic # LaTeX compiler
+    #masterpkgs.tectonic # LaTeX compiler
     #zathura
     mypkgs.zathura-pywall
     beamerpresenter
@@ -62,10 +62,10 @@ in
     # gaming
     steam steam-run
     # minecraft
-    polymc
+    # polymc CVE
 
     wineWowPackages.full
 
-    scribusUnstable
+    scribus
   ];
 }

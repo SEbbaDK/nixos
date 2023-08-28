@@ -22,6 +22,7 @@ in
     youtube-dl
     todo-txt-cli
     gdb
+    screen
     wget whois dig djbdns # WEB and DNS utilities
     usbutils
     miraclecast # Cast to TV

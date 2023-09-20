@@ -11,8 +11,6 @@ in
   stregsystem = callPackage (fetchTarball "https://github.com/f-klubben/stregsystemet-cli/archive/master.tar.gz");
   zathura-pywall = callPackage ./zathura-pywal.nix;
 
-  comma = callPackage (fetchTarball "https://github.com/Shopify/comma/archive/master.tar.gz");
-
   barion = callPackage (fetchTarball "https://github.com/sebbadk/barion/archive/master.tar.gz");
 
   droidcam-obs-plugin = callPackage ./droidcam-obs-plugin.nix;

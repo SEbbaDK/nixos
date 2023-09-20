@@ -9,7 +9,6 @@ in
     bluetuith
     curl
     fd
-    ripgrep
     fzf
     gdb
     gdu # Disk Usage
@@ -20,12 +19,12 @@ in
     jq fx # Work with json on commandline
     mediainfo
     miraclecast # Cast to TV
-    #mypkgs.barion
-    #mypkgs.comma # Disabled because it was broken
-    nodejs # We want nodejs because of vim plugins
+    mypkgs.barion
+    comma
     ntfs3g # NTFS support (mkfs.ntfs)
     ranger
     ripgrep pcre # Better grep (<3 -o1)
+    screen
     tabview # CSV viewer
     todo-txt-cli
     unzip unrar

@@ -83,22 +83,24 @@ in
   };
   services.matrix-synapse = {
     enable = true;
-    server_name = domain;
-    registration_shared_secret = secrets.matrix.registration_secret;
-    listeners = [
-      {
-        port = 8008;
-        bind_address = "::1";
-        type = "http";
-        tls = false;
-        x_forwarded = true;
-        resources = [
-          {
-            names = [ "client" "federation" ];
-            compress = false;
-          }
-        ];
-      }
-    ];
+    settings = {
+      server_name = domain;
+      registration_shared_secret = secrets.matrix.registration_secret;
+      listeners = [
+        {
+          port = 8008;
+          bind_addresses = [ "::1" ];
+          type = "http";
+          tls = false;
+          x_forwarded = true;
+          resources = [
+            {
+              names = [ "client" "federation" ];
+              compress = false;
+            }
+          ];
+        }
+      ];
+    };
   };
 }

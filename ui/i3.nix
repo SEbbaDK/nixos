@@ -36,7 +36,8 @@ in
     vSync = true;
 
 	activeOpacity = 1.0;
-	inactiveOpacity = 0.85;
+	inactiveOpacity = 1.0;
+	#inactiveOpacity = 0.85;
 	menuOpacity = 1.0;
     opacityRules = [
 		"100:class_g = 'Rofi'"

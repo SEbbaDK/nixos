@@ -29,9 +29,10 @@ in
     # document
     pandoc
     tectonic # LaTeX compiler
-    zathura-with-plugins
+    #zathura-with-plugins
     mypkgs.zathura-pywall
     beamerpresenter
+    scribus
 
     # editing
     gimp
@@ -66,7 +67,7 @@ in
     steam steam-run
     # minecraft
     prismlauncher
-
+    # polymc CVE
     wineWowPackages.full
   ];
 }

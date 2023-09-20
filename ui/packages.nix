@@ -8,9 +8,10 @@ in
   # These are the packages that aren't included via other mechanisms
   # like nixos or homemanager options and should only be on UI systems
   users.users.${user}.packages = with pkgs; [
-	# image
+    # image
     sxiv
     feh
+    qimgv
 
     # video
     vlc
@@ -27,17 +28,21 @@ in
 
     # document
     pandoc
-    masterpkgs.tectonic # LaTeX compiler
-    #zathura
+    tectonic # LaTeX compiler
+    zathura-with-plugins
     mypkgs.zathura-pywall
     beamerpresenter
 
-	# editing
+    # editing
     gimp
     inkscape
     pinta
+    #rawtherapee
+    #darktable
+    scribus
+    rapid-photo-downloader
 
-	# screenshot
+    # screenshot
     peek
     gnome3.gnome-screenshot
     mypkgs.screenshot
@@ -46,15 +51,13 @@ in
     thunderbird
     aerc
 
-    #rawtherapee
-    #darktable
     transmission
 
     # misc
     mypkgs.stregsystem
     arandr
     zotero
-	nfs-utils # For mounting the NAS
+    nfs-utils # For mounting the NAS
 
     # aau vpn
     openconnect
@@ -62,10 +65,8 @@ in
     # gaming
     steam steam-run
     # minecraft
-    polymc
+    prismlauncher
 
     wineWowPackages.full
-
-    scribusUnstable
   ];
 }

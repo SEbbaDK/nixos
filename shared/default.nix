@@ -22,6 +22,7 @@ in
     ];
 
   nixpkgs.config.allowUnfree = true;
+  system.copySystemConfiguration = true;
 
   users.users.${user} = {
     initialPassword = "temporary";

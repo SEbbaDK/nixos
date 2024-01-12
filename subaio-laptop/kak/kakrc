@@ -1,0 +1,31 @@
+add-highlighter global/ number-lines
+add-highlighter global/ show-matching
+
+set-face global MenuBackground white
+set-face global MenuForeground black,white,white+b
+set-face global PrimarySelection black,blue,default+fgb
+set-face global MatchingChar default,red,default+b
+
+hook global WinSetOption filetype=markdown %{
+  add-highlighter buffer/ wrap -indent -word -marker ↪
+}
+
+eval %sh{kak-lsp --config ~/.config/kak/lsp.toml --kakoune -s $kak_session}
+hook global WinSetOption filetype=(java,yaml) %{
+  lsp-enable-window
+}
+
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
+plug "h-youhei/kakoune-surround" %{
+  map global normal <A-q> ':surround<ret>'
+}
+
+plug "alexherbo2/auto-pairs.kak" %{
+  enable-auto-pairs
+}
+
+plug "lePerdu/kakboard" %{
+  hook global WinCreate .* %{ kakboard-enable }
+}
+

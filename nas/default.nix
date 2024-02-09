@@ -15,6 +15,9 @@ import ../base.nix {
 		./torrent.nix
 		./dlna.nix
 		../laptop/bluetooth.nix
+		#./wireguard.nix
+		#./tailscale.nix
+		#./vpn.nix
 
 		./docker.nix
 		./home-assistant.nix

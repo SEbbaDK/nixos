@@ -3,12 +3,14 @@
     networking.firewall.allowedUDPPorts = [ 1900 ];
     services.minidlna = {
         enable = true;
-        friendlyName = "NAS";
-        settings.inotify = "yes";
-        mediaDirs = [
-            "A,/mnt/big/music"
-            "/mnt/big/media"
-            "/mnt/big/photos"
-        ];
+        settings = {
+            friendlyName = "NAS";
+        	inotify = "yes";
+            mediaDirs = [
+                "A,/mnt/big/music"
+                "/mnt/big/media"
+                "/mnt/big/photos"
+            ];
+        };
     };
 }

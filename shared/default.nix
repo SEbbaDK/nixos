@@ -36,6 +36,4 @@ in
           options = [ "NOPASSWD" ];
       } ];
   } ];
-  # This is to allow cachix use
-  nix.trustedUsers = [ "root" user ];
 }

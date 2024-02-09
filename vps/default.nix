@@ -16,5 +16,5 @@ import ../base.nix
       ./tunnel.nix
     ];
   version = "21.05";
-  swap = 4;
+  swap = 2;
 }

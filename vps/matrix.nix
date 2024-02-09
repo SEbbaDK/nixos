@@ -9,6 +9,7 @@ in
 
   services.postgresql = {
     enable = true;
+    package = pkgs.postgresql_16;
     initialScript = pkgs.writeText "synapse-init.sql" ''
       CREATE ROLE "matrix-synapse" WITH LOGIN PASSWORD 'synapse';
       CREATE DATABASE "matrix-synapse" WITH OWNER "matrix-synapse"
@@ -16,12 +17,12 @@ in
         LC_COLLATE = "C"
         LC_CTYPE = "C";
     '';
-    ensureUsers = [{
-      name = "matrix-synapse";
-      ensurePermissions = {
-        "DATABASE \"matrix-synapse\"" = "ALL PRIVILEGES";
-      };
-    }];
+    #ensureUsers = [{
+    #  name = "matrix-synapse";
+    #  ensurePermissions = {
+    #    "DATABASE \"matrix-synapse\"" = "ALL PRIVILEGES";
+    #  };
+    #}];
   };
 
   services.nginx = {

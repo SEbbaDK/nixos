@@ -23,8 +23,7 @@ in
     masterpkgs.signal-desktop
     masterpkgs.element-desktop
     masterpkgs.gomuks
-    teams
-    weechat
+    #weechat
 
     # document
     pandoc

@@ -15,6 +15,7 @@ in
   networking.hostName = hostname;
 
   system.stateVersion = version;
+  home-manager.users.${(import ./user.nix)}.home.stateVersion = version;
 
   swapDevices = optional
     (swap > 0)

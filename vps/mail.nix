@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   secrets = import ../secrets;
-  release = "nixos-21.11";
+  release = "nixos-23.11";
 in
 {
   imports = [

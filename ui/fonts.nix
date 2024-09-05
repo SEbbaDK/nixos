@@ -3,7 +3,7 @@ let
 	mypkgs = import ../pkgs { inherit pkgs; };
 in
 {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     fira-code
     noto-fonts-emoji-blob-bin
 	#mypkgs.fira-code-victor

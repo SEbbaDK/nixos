@@ -1,6 +1,6 @@
 {
-	qt5.style = "adwaita-dark";
-	qt5.platformTheme = "gtk";
+	qt.style = "adwaita-dark";
+	qt.platformTheme = "gtk";
 	services.xserver.displayManager.lightdm.greeters = {
     	#enso.enable = true;
     	mini.enable = true;

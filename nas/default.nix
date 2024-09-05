@@ -3,7 +3,6 @@ import ../base.nix {
   ui = false;
   deviceImports =
     [
-        ./adguard.nix
 		./boot.nix
 		./drives.nix
 		./duplicacy.nix
@@ -14,15 +13,9 @@ import ../base.nix {
 		./syncthing.nix
 		./torrent.nix
 		./dlna.nix
-		../laptop/bluetooth.nix
-		#./wireguard.nix
-		#./tailscale.nix
-		#./vpn.nix
 
-		./docker.nix
 		./home-assistant.nix
 		./photoprism.nix
-		./navidrome.nix
     ];
   swap = 8;
   version = "20.09";

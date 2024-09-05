@@ -1,8 +1,11 @@
 { pkgs, ... }:
 {
-  services.xserver.libinput = {
+  services.libinput = {
     enable = true;
     #naturalScrolling = true;
-    touchpad.naturalScrolling = true;
+    touchpad = {
+        naturalScrolling = true;
+        accelProfile = "flat";
+    };
   };
 }

@@ -17,7 +17,7 @@ let
   plugins = with pkgs.kakounePlugins; [
     kakoune-buffers
     fzf-kak
-    kak-lsp
+    kakoune-lsp
     pandoc-kak
     tabs-kak
     kakboard

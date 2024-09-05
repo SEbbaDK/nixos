@@ -4,7 +4,7 @@ in
 { pkgs ? import <nixpkgs> { }, ... }:
 {
   imports = [
-    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz"}/nixos")
+    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz"}/nixos")
   ];
 
   home-manager.users.${user} = {

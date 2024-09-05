@@ -27,6 +27,7 @@ in
     screen
     tabview # CSV viewer
     todo-txt-cli
+    tree
     unzip unrar
     usbutils
     vim_configurable

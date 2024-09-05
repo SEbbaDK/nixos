@@ -9,6 +9,7 @@ in
       # Note that shell.nix should also be changed
       # if the switch back to bash is made
       # ./bash.nix
+      ./acme.nix
       ./fish.nix
       ./danish.nix
       ./kakoune.nix

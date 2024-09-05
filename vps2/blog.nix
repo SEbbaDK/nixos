@@ -9,12 +9,13 @@ let
         enableACME = true;
         locations."/" = {
             proxyPass = "http://localhost:2368";
+            recommendedProxySettings = true;
         };
     };
     
     virtualisation.oci-containers.containers.ghost = {
         hostname = "ghost";
-        image = "docker.io/library/ghost:alpine";
+        image = "docker.io/library/ghost:5.89.1-alpine";
         autoStart = true;
         ports = [ "127.0.0.1:2368:2368" ];
         volumes = [
@@ -22,7 +23,7 @@ let
             #"/data/blog/config.production.json:/var/lib/ghost/config.production.json"
         ];
         environment = {
-            url = "http://blog.sebba.dk";
+            url = "https://blog.sebba.dk";
             database__client = "mysql";
             database__connection__host = "ghost-db";
             database__connection__user = dbuser;

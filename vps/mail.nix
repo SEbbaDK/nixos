@@ -1,13 +1,13 @@
 { pkgs, ... }:
 let
   secrets = import ../secrets;
-  release = "nixos-23.11";
+  release = "nixos-24.05";
 in
 {
   imports = [
     (builtins.fetchTarball {
       url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/${release}/nixos-mailserver-${release}.tar.gz";
-      sha256 = "1i56llz037x416bw698v8j6arvv622qc0vsycd20lx3yx8n77n44";
+      sha256 = "0clvw4622mqzk1aqw1qn6shl9pai097q62mq1ibzscnjayhp278b";
     })
   ];
 
@@ -16,7 +16,7 @@ in
     fqdn = "mail.sebba.dk";
     domains = secrets.mail.domains;
     loginAccounts = secrets.mail.accounts;
-    certificateScheme = 3;
+    certificateScheme = "acme-nginx";
     enableImapSsl = true;
     enablePop3Ssl = true;
   };

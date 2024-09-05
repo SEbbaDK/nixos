@@ -1,6 +1,6 @@
 import ../base.nix
 {
-  hostname = "sebbadk-dockertest";
+  hostname = "vps2";
   ui = false;
   deviceImports =
     [

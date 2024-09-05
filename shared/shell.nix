@@ -14,6 +14,7 @@
         gps = "git push";
         gpl = "git pull";
         gd = "git diff";
+        gdc = "git diff --cached";
         gb = "git checkout -b";
         gsw = "git switch";
         ga = "git add";

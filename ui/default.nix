@@ -1,5 +1,6 @@
 {
   imports = [
+    ./capslock.nix
     ./common.nix
     ./droidcam.nix
     ./dunst.nix
@@ -7,7 +8,6 @@
     ./fonts.nix
     ./gaming.nix
     ./graphical-boot.nix
-    #./hotkeys.nix
     ./i3.nix
     ./kde-connect.nix
     ./kitty.nix

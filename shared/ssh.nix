@@ -21,16 +21,7 @@ in
   home-manager.users.${user}.programs.ssh = {
     enable = true;
     serverAliveInterval = 240;
-    matchBlocks = mkMerge [
-      {
-        #"mac" = {
-        #  hostname = "localhost";
-        #  port = 2222;
-        #  user = "sebbadk";
-        #};
-      }
-      secrets.ssh
-    ];
+    matchBlocks = secrets.ssh;
     extraConfig = ''
         KexAlgorithms +diffie-hellman-group14-sha1
     '';

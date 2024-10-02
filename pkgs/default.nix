@@ -18,4 +18,15 @@ in
 
   fira-code-iscript = callPackage ./fira-code-iscript.nix;
   fira-code-victor = callPackage ./fira-code-victor.nix;
+
+  flashfocus = pkgs.flashfocus.overrideAttrs (attrs: prevAttrs: {
+    nativeBuildInputs = prevAttrs.nativeBuildInputs + [ pkgs.procps ];
+  });
+
+  chorddown = callPackage (pkgs.fetchFromGitHub {
+      owner = "sebbadk";
+      repo = "chorddown";
+      rev = "0.3.0";
+      hash = "sha256-Hg4NakYAC4BNLoM1NfxoYBdDb3K1SCywvEKha4EhPb8=";
+  });
 }

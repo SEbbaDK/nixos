@@ -50,7 +50,8 @@ in
 
     # mail
     thunderbird
-    aerc
+    aerc w3m glow # extra used to render
+    masterpkgs.gcalcli
 
     transmission
 
@@ -59,6 +60,9 @@ in
     arandr
     zotero
     nfs-utils # For mounting the NAS
+    pass # Password manager
+    mypkgs.chorddown.viewer
+    (pkgs.writeShellScriptBin "chords" "${mypkgs.chorddown.browser}/bin/chorddown-browser $HOME/sange")
 
     # aau vpn
     openconnect

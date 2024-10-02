@@ -1,6 +1,8 @@
 { pkgs, ... }:
 let
   user = import ../user.nix;
+  hideLonelyTabs = builtins.readFile "${fetchTarball "https://github.com/MrOtherGuy/firefox-csshacks/archive/master.tar.gz"}/chrome/hide_tabs_with_one_tab.css";
+  verticalTabs = builtins.readFile (builtins.fetchurl "https://codeberg.org/ranmaru22/firefox-vertical-tabs/raw/branch/main/userChrome.css");
 in
 {
   home-manager.users.${user}.programs.firefox = {
@@ -18,6 +20,9 @@ in
           "full-screen-api.ignore-widgets" = true; # This allows for fullscreen in frame
           "devtools.theme" = "dark";
         };
+        userChrome = ''
+          ${verticalTabs}
+        '';
       };
       app = {
         id = 1;
@@ -29,14 +34,10 @@ in
           "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         };
         # userChrome = builtins.readFile "${fetchTarball "https://github.com/Etesam913/slick-fox/archive/master.tar.gz"}/userChrome.css";
-        userChrome =
-          let
-            hideLonelyTabs = builtins.readFile "${fetchTarball "https://github.com/MrOtherGuy/firefox-csshacks/archive/master.tar.gz"}/chrome/hide_tabs_with_one_tab.css";
-          in
-          ''
-            #nav-bar { visibility: collapse !important; }
-            ${hideLonelyTabs}
-          '';
+        userChrome = ''
+          #nav-bar { visibility: collapse !important; }
+          ${hideLonelyTabs}
+        '';
       };
     };
   };

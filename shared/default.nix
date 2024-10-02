@@ -23,6 +23,10 @@ in
     ];
 
   nixpkgs.config.allowUnfree = true;
+  nix.settings = {
+      trusted-users = [ "root" "@wheel" ];
+      experimental-features = [ "nix-command" ];
+  };
   system.copySystemConfiguration = true;
 
   users.users.${user} = {

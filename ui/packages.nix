@@ -24,6 +24,7 @@ in
     masterpkgs.signal-desktop
     masterpkgs.element-desktop
     masterpkgs.gomuks
+    ferdium
     #weechat
 
     # document
@@ -58,10 +59,10 @@ in
     # misc
     mypkgs.stregsystem
     arandr
-    zotero
+    zotero_7 sioyek # Researchværktøjer
     nfs-utils # For mounting the NAS
     pass # Password manager
-    mypkgs.chorddown.viewer
+    mypkgs.chorddown.viewer mypkgs.chorddown.browser
     (pkgs.writeShellScriptBin "chords" "${mypkgs.chorddown.browser}/bin/chorddown-browser $HOME/sange")
 
     # aau vpn
@@ -74,4 +75,13 @@ in
     # polymc CVE
     wineWowPackages.full
   ];
+
+  home-manager.users.${user}.xdg.mimeApps = {
+	enable = true;
+	defaultApplications = {
+	  "application/pdf" = "Zathura.desktop";
+      "x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
+      "x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
+	};
+  };
 }

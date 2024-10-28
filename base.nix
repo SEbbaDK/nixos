@@ -4,7 +4,7 @@
 , version
 , swap ? 0
 }:
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
   user = import ./user.nix;
   optional = pkgs.lib.optional;

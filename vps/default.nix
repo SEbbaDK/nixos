@@ -7,13 +7,13 @@ import ../base.nix
       ./boot.nix
       ./hardware-configuration.nix
 
-      ./acme.nix
+      ./git.nix
       ./mail.nix
-      ./networking.nix
-      ./websites.nix
       ./matrix.nix
+      ./networking.nix
       ./sonica.nix
       ./tunnel.nix
+      ./websites.nix
     ];
   version = "21.05";
   swap = 2;

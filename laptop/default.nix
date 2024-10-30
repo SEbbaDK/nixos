@@ -8,7 +8,6 @@ import ../base.nix {
       ./hardware-configuration.nix
       ./bluetooth.nix
       ./networking.nix
-      ./packages.nix
       ./touchpad.nix
     ];
   swap = 16;

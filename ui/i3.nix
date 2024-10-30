@@ -28,9 +28,9 @@ in
         libnotify
         dunst
         pywal
-        xdotool
-        brightnessctl
-        ff
+        brightnessctl # For brightness ctrl
+        alsa-utils # For audio ctrl
+        ff # Flashing on select
         # i3wsr
         # swaywsr
       ];

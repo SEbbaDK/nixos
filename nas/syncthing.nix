@@ -1,13 +1,11 @@
-let
-  user = import ../user.nix;
-in
+{ config, ... }:
 {
   networking.firewall.allowedTCPPorts = [ 22000 ];
   networking.firewall.allowedUDPPorts = [ 22000 ];
   services.syncthing = {
     enable = true;
   };
-  users.users.${user}.extraGroups = [ "syncthing" ];
+  users.users.${config.users.main}.extraGroups = [ "syncthing" ];
 
   fileSystems."/sync" = {
       device = "/mnt/big/syncthing";

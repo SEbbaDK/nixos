@@ -3,7 +3,6 @@ let
   ff = pkgs.flashfocus.overrideAttrs (attrs: prevAttrs: {
     propagatedBuildInputs = prevAttrs.propagatedBuildInputs ++ [ pkgs.procps ];
   });
-  user = import ../user.nix;
 in
 {
   services.displayManager = {

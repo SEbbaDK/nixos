@@ -1,6 +1,3 @@
-let
-  user = import ../user.nix;
-in
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
@@ -8,7 +5,7 @@ in
     nodejs # We want nodejs because of vim plugins
   ];
 
-  home-manager.users.${user}.programs.vim = {
+  home-manager.main.programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
       ale

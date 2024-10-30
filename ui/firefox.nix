@@ -1,20 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
-  user = import ../user.nix;
   hideLonelyTabs = builtins.readFile "${fetchTarball "https://github.com/MrOtherGuy/firefox-csshacks/archive/master.tar.gz"}/chrome/hide_tabs_with_one_tab.css";
   verticalTabs = builtins.readFile (builtins.fetchurl "https://codeberg.org/ranmaru22/firefox-vertical-tabs/raw/branch/main/userChrome.css");
 in
 {
-  home-manager.users.${user}.programs.firefox = {
+  home-manager.main.programs.firefox = {
     enable = true;
     profiles = {
-      ${user} = {
+      ${config.users.main} = {
         id = 0;
         isDefault = true;
         settings = {
           "browser.startup.homepage" = "about:blank";
           "browser.bookmarks.restore_default_bookmarks" = false;
-          "browser.download.dir" = "/home/${user}/downloads";
+          "browser.download.dir" = "/home/${config.users.main}/downloads";
           "browser.aboutConfig.showWarning" = false;
           "browser.tabs.warnOnClose" = false;
           "full-screen-api.ignore-widgets" = true; # This allows for fullscreen in frame

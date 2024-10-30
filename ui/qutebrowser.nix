@@ -1,9 +1,6 @@
-let
-  user = import ../user.nix;
-in
 {
   environment.variables.BROWSER = "qutebrowser";
-  home-manager.users.${user}.programs.qutebrowser = {
+  home-manager.main.programs.qutebrowser = {
     enable = true;
     settings = {
       colors.webpage.darkmode.enabled = true;

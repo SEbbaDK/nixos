@@ -1,7 +1,4 @@
-let
-  user = import ../user.nix;
-in
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   services.printing = {
       enable = true;
@@ -13,7 +10,7 @@ in
   services.autorandr.enable = true;
 
   programs.adb.enable = true;
-  users.users.${user}.extraGroups = [ "adbusers" ];
+  users.users.${config.users.main}.extraGroups = [ "adbusers" ];
 
   services.unclutter.enable = true;
 }

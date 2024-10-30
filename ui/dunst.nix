@@ -1,9 +1,6 @@
 { pkgs, ... }:
-let
-  user = import ../user.nix;
-in
 {
-  home-manager.users.${user} = {
+  home-manager.main = {
     services.dunst = {
       enable = true;
       settings = {

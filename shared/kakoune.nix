@@ -1,6 +1,5 @@
 { pkgs, ... }:
 let
-  user = import ../user.nix;
   config = pkgs.writeTextFile (rec {
     name = "kakrc.kak";
     destination = "/share/kak/autoload/${name}";
@@ -32,7 +31,7 @@ in
   #  })
   #];
 
-  home-manager.users.${user}.programs.kakoune = {
+  home-manager.main.programs.kakoune = {
     enable = true;
     plugins = plugins;
     config = {

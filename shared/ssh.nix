@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   secrets = import ../secrets;
-  user = import ../user.nix;
   mkMerge = pkgs.lib.mkMerge;
 in
 {
@@ -14,11 +13,11 @@ in
 		ClientAliveCountMax=2
     '';
   };
-  users.users.${user}.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
+  users.users.${config.users.main}.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
   # Maybe this shouldn't be enabled?
   # users.users.root.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
 
-  home-manager.users.${user}.programs.ssh = {
+  home-manager.main.programs.ssh = {
     enable = true;
     serverAliveInterval = 240;
     matchBlocks = secrets.ssh;

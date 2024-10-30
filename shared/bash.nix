@@ -1,6 +1,5 @@
 { pkgs, ... }:
 let
-  user = import ../user.nix;
   mypkgs = import ../pkgs { inherit pkgs; };
   pcregrep = "${pkgs.pcre}/bin/pcregrep";
 in
@@ -55,7 +54,7 @@ in
     PROMPT_COMMAND=set_prompt
   '';
 
-  home-manager.users.${user}.programs.bash = {
+  home-manager.main.programs.bash = {
     enable = true;
     historyControl = [ "ignoredups" "ignorespace" ];
     historyIgnore = [ "ls" "cd" "r" "ranger" ];

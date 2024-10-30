@@ -1,8 +1,5 @@
-let
-  user = import ../user.nix;
-in
 {
-  home-manager.users.${user}.programs.kitty = {
+  home-manager.main.programs.kitty = {
     enable = true;
     keybindings = {
       "kitty_mod+plus" = "change_font_size all +2.0";

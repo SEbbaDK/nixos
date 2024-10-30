@@ -1,6 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
-  user = import ../user.nix;
   mypkgs = import ../pkgs { inherit pkgs; };
   masterpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") { config = { nixpkgs.config.allowUnfree = true; allowUnfree = true; permittedInsecurePackages = [ "olm-3.2.16" ]; }; };
 in
@@ -8,7 +7,7 @@ in
   nixpkgs.config.permittedInsecurePackages = [ "olm-3.2.16" ];
   # These are the packages that aren't included via other mechanisms
   # like nixos or homemanager options and should only be on UI systems
-  users.users.${user}.packages = with pkgs; [
+  users.users.${config.users.main}.packages = with pkgs; [
     # image
     sxiv
     feh
@@ -76,7 +75,7 @@ in
     wineWowPackages.full
   ];
 
-  home-manager.users.${user}.xdg.mimeApps = {
+  home-manager.main.xdg.mimeApps = {
 	enable = true;
 	defaultApplications = {
 	  "application/pdf" = "Zathura.desktop";

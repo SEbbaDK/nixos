@@ -1,10 +1,8 @@
-let
-  user = import ../user.nix;
-in
+{ config, ... }:
 {
-  home-manager.users.${user} = {
+  home-manager.main = {
     # programs.rofi.theme = "/home/${user}/.cache/wal/colors-rofi-dark.rasi";
-    programs.kitty.extraConfig = "include /home/${user}/.cache/wal/colors-kitty.conf";
+    programs.kitty.extraConfig = "include /home/${config.users.main}/.cache/wal/colors-kitty.conf";
     programs.bash.initExtra = ''
       [ -f ~/.cache/wal/colors-tty.sh ] && source ~/.cache/wal/colors-tty.sh
     '';

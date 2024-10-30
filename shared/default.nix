@@ -1,10 +1,9 @@
-let
-  user = import ../user.nix;
-in
+{ config, ... }:
 {
   imports =
     [
       ./home-manager.nix
+      ../modules/user.nix
 
       # Note that shell.nix should also be changed
       # if the switch back to bash is made
@@ -22,20 +21,21 @@ in
       # ./ssh-keys.nix is imported via user keys
     ];
 
+  users.main = "sebbadk";
+
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
       trusted-users = [ "root" "@wheel" ];
       experimental-features = [ "nix-command" ];
   };
-  system.copySystemConfiguration = true;
 
-  users.users.${user} = {
+  users.users.${config.users.main} = {
     initialPassword = "temporary";
     isNormalUser = true;
     extraGroups = [ "wheel" "dialout" "cdrom" ];
   };
   security.sudo.extraRules = [ {
-      users = [ "sebbadk" ];
+      users = [ config.users.main ];
       commands = [ {
           command = "ALL";
           options = [ "NOPASSWD" ];

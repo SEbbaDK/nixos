@@ -2,7 +2,7 @@
 {
   services.printing = {
       enable = true;
-      drivers = [ pkgs.hplip ];
+      drivers = [ pkgs.hplip pkgs.brlaser ];
   };
 
   #hardware.pulseaudio.enable = true;

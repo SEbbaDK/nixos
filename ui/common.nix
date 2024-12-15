@@ -20,4 +20,6 @@
   users.users.${config.users.main}.extraGroups = [ "adbusers" ];
 
   services.unclutter.enable = true;
+
+  services.mullvad-vpn.enable = true;
 }

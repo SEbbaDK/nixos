@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
   mypkgs = import ../pkgs { inherit pkgs; };
-  masterpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") { config = { nixpkgs.config.allowUnfree = true; allowUnfree = true; permittedInsecurePackages = [ "olm-3.2.16" ]; }; };
+  masterpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz") { config = { nixpkgs.config.allowUnfree = true; allowUnfree = true; permittedInsecurePackages = [ "olm-3.2.16" ]; }; };
 in
 {
   nixpkgs.config.permittedInsecurePackages = [ "olm-3.2.16" ];

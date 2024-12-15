@@ -45,15 +45,15 @@ in
 
     # screenshot
     peek
-    gnome3.gnome-screenshot
+    gnome-screenshot
     mypkgs.screenshot
 
     # mail
     thunderbird
     aerc w3m glow # extra used to render
-    masterpkgs.gcalcli
+    gcalcli
 
-    transmission
+    transmission_4
 
     # misc
     mypkgs.stregsystem
@@ -61,8 +61,8 @@ in
     zotero_7 sioyek # Researchværktøjer
     nfs-utils # For mounting the NAS
     pass # Password manager
-    mypkgs.chorddown.viewer mypkgs.chorddown.browser
-    (pkgs.writeShellScriptBin "chords" "${mypkgs.chorddown.browser}/bin/chorddown-browser $HOME/sange")
+    #mypkgs.chorddown.viewer mypkgs.chorddown.browser
+    #(pkgs.writeShellScriptBin "chords" "${mypkgs.chorddown.browser}/bin/chorddown-browser $HOME/sange")
 
     # aau vpn
     openconnect

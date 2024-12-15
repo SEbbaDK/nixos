@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> { }, ... }:
 {
   imports = [
-    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz"}/nixos")
+    (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz"}/nixos")
   ];
 
   home-manager.useGlobalPkgs = true;

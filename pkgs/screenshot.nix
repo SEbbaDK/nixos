@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> { }, ... }:
 let
-  gnome-screenshot = "${pkgs.gnome3.gnome-screenshot}/bin/gnome-screenshot";
+  gnome-screenshot = "${pkgs.gnome-screenshot}/bin/gnome-screenshot";
   pinta = "${pkgs.pinta}/bin/pinta";
   xclip = "${pkgs.xclip}/bin/xclip";
 in

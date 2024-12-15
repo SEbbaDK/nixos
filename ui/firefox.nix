@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 let
   hideLonelyTabs = builtins.readFile "${fetchTarball "https://github.com/MrOtherGuy/firefox-csshacks/archive/master.tar.gz"}/chrome/hide_tabs_with_one_tab.css";
-  verticalTabs = builtins.readFile (builtins.fetchurl "https://codeberg.org/ranmaru22/firefox-vertical-tabs/raw/branch/main/userChrome.css");
 in
 {
   home-manager.main.programs.firefox = {
@@ -20,7 +19,6 @@ in
           "devtools.theme" = "dark";
         };
         userChrome = ''
-          ${verticalTabs}
         '';
       };
       app = {

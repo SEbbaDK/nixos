@@ -2,14 +2,14 @@
 {
     #boot.initrd.kernelModules = [ "amdgpu" ];
     #services.xserver.videoDrivers = [ "amdgpu" ];
-    hardware.opengl.extraPackages = [
+    hardware.graphics.extraPackages = [
         pkgs.vaapiVdpau
         pkgs.libvdpau-va-gl
         pkgs.rocmPackages.clr
         pkgs.rocmPackages.clr.icd
         pkgs.amdvlk
     ];
-    hardware.opengl.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    hardware.graphics.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
 
     environment.systemPackages = [ pkgs.lact ];
     systemd.packages = [ pkgs.lact ];

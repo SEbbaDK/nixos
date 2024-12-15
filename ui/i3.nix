@@ -23,7 +23,7 @@ in
       extraPackages = with pkgs; [
         dmenu
         rofi
-        i3status
+        acpi (pkgs.writeScriptBin "fish-status" (builtins.readFile ./fish-status.fish))
         i3lock-color
         libnotify
         dunst

@@ -1,4 +1,6 @@
 {
+  environment.variables.TERMINAL = "kitty";
+
   home-manager.main.programs.kitty = {
     enable = true;
     keybindings = {

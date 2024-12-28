@@ -9,7 +9,7 @@ in
     group = "git";
     isSystemUser = true;
     createHome = true;
-    openssh.authorizedKeys.keys = (import ../shared/ssh-keys.nix) ++ [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICuMDVDKqB1nIi/wOgNCQtTjgYm3X1/XGcJXgSBgjMB sebbadk@phone" ];
+    openssh.authorizedKeys.keys = (import ../secrets/ssh-keys.nix) ++ [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICuMDVDKqB1nIi/wOgNCQtTjgYm3X1/XGcJXgSBgjMB sebbadk@phone" ];
     home = "/git";
     shell = gsh;
   };

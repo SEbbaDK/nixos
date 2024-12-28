@@ -13,7 +13,7 @@ in
 		ClientAliveCountMax=2
     '';
   };
-  users.users.${config.users.main}.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
+  users.users.${config.users.main}.openssh.authorizedKeys.keys = import ../secrets/ssh-keys.nix;
   # Maybe this shouldn't be enabled?
   # users.users.root.openssh.authorizedKeys.keys = import ./ssh-keys.nix;
 
